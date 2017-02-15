@@ -11,31 +11,128 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="dist/bundle.js"></script>
 </head>
-<body ng-app="financier">
-    <md-toolbar class="md-hue-2">
+<body ng-app="financier" layout="column">
+    <md-toolbar md-scroll-shrink class="md-hue-2">
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-          <md-icon md-set-font="material-icons">accessibility</md-icon>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-set-font="material-icons">account_balance</md-icon>
         </md-button>
-
-        <h2 flex md-truncate>Toolbar with Disabled/Enabled Icon Buttons</h2>
-
-        <md-button class="md-icon-button" aria-label="Favorite">
-          <md-icon md-set-font="material-icons">accessibility</md-icon>
-        </md-button>
+        <h2 flex md-truncate>
+          EMPRESA LTDA ME
+        </h2>
 
         <md-button class="md-icon-button" aria-label="More">
-          <md-icon md-set-font="material-icons">accessibility</md-icon>
+          <md-icon md-set-font="material-icons">notifications</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-set-font="material-icons">more_vert</md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Eat cake">
+            <b>LF</b>
         </md-button>
       </div>
     </md-toolbar>
 
-    <div ng-controller="IndexController as vm">
-        {{vm.test}}
-    </div>
-    <div ng-controller="HomeIndexController as vm">
-        {{vm.test}}
-    </div>
+    <md-content flex layout="row" layout-xs="column">
+        <div flex="20">
+          <md-list class="md-dense" flex>
+            <md-list-item ng-click="null">
+              <img ng-src="https://material.angularjs.org/latest/img/100-2.jpeg" class="md-avatar" alt="" />
+              <p>
+                Lucas França
+              </p>
+            </md-list-item>
+            <md-divider ></md-divider>
+            <md-subheader class="md-no-sticky">Grupos</md-subheader>
+            <md-list-item ng-repeat="item in [1,2,3,4]" ng-click="null">
+              <md-icon class="md-avatar-icon" md-set-font="material-icons">menu</md-icon>
+              <p>
+                Grupo 0{{item}}
+              </p>
+            </md-list-item>
+            <md-divider ></md-divider>
+            <md-subheader class="md-no-sticky">Eventos</md-subheader>
+            <md-list-item ng-repeat="item in [1,2,3,4]" ng-click="null">
+              <md-icon class="md-avatar-icon" md-set-font="material-icons">motorcycle</md-icon>
+              <p>
+                Evento 0{{item}}
+              </p>
+            </md-list-item>
+          </md-list>
+        </div>
+        <div flex="60">
+          <md-card>
+            <md-card-header style="padding: 16px 16px 0 16px;">
+              <md-card-avatar>
+                <img class="md-user-avatar" src="https://material.angularjs.org/latest/img/100-2.jpeg"/>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">User</span>
+                <span class="md-subhead">subhead</span>
+              </md-card-header-text>
+            </md-card-header>
+            <md-card-content style="padding: 0 16px 0 16px;">
+              <md-input-container md-no-float class="md-block">
+                <textarea placeholder="No que você esta pensando?" ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+              </md-input-container>
+            </md-card-content>
+            <md-card-actions layout="row">
+              <div flex layout="row" layout-align="start center">
+                <md-button class="md-icon-button" aria-label="Settings">
+                  <md-icon md-set-font="material-icons">photo_camera</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Settings">
+                  <md-icon md-set-font="material-icons">videocam</md-icon>
+                </md-button>
+              </div>
+              <div flex layout="row" layout-align="end center">
+                <md-button class="md-raised md-primary">Enviar</md-button>
+              </div>
+            </md-card-actions>
+          </md-card>
+
+          <md-card ng-repeat="item in [1,2,3,4,5]">
+            <md-card-header>
+              <md-card-avatar>
+                <md-icon class="md-avatar-icon" md-set-font="material-icons">menu</md-icon>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title">Title</span>
+                <span class="md-subhead">subhead</span>
+              </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+              <p>
+                The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+              </p>
+            </md-card-content>
+            <img ng-src="https://material.angularjs.org/latest/img/washedout.png" class="md-card-image" alt="Washed Out">
+            <!--<md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">In-card actions</span>
+                <span class="md-subhead">Description</span>
+              </md-card-title-text>
+            </md-card-title>-->
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button class="md-icon-button" aria-label="Favorite">
+                <md-icon md-set-font="material-icons">favorite</md-icon>
+              </md-button>
+              <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-set-font="material-icons">chat</md-icon>
+              </md-button>
+              <!--<md-button class="md-icon-button" aria-label="Share">
+                <md-icon md-set-font="material-icons">menu</md-icon>
+              </md-button>-->
+            </md-card-actions>
+          </md-card>
+        </div>
+        <div flex="20">
+          <h2>
+            CHAT
+          </h2>
+        </div>
+    </md-content>
     
     
 </body>

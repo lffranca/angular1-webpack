@@ -20,8 +20,4 @@ angular.module('financier', [
     angularMaterial,
 
     'financier.controllers'
-])
-.controller('IndexController', function() {
-    let vm = this;
-    vm.test = 'laisuhdouiahsdoufhaosduhf';
-});
+]);
