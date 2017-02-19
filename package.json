@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Aplicação realtime da rede social de empresas",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "rm -vf ~/.cache/google-chrome/Default/Cache/*_* && webpack --config webpack.config.js && http-server"
   },
   "author": "Lucas França <lucas.teleinfo@gmail.com>",
-  "license": "ISC",
+  "license": "UNLICENSED",
+  "repository": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/rede-social-timeline1",
   "dependencies": {
     "angular": "^1.6.2",
     "angular-animate": "^1.6.2",

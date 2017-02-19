@@ -11,6 +11,7 @@ import * as angularAria from 'angular-aria';
 import * as angularMessages from 'angular-messages';
 import * as angularMaterial from 'angular-material';
 
+require('./settings/module');
 require('./controllers/module');
 
 angular.module('financier', [
@@ -19,5 +20,6 @@ angular.module('financier', [
     angularMessages,
     angularMaterial,
 
+    'financier.settings',
     'financier.controllers'
 ]);
